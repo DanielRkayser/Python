@@ -1,11 +1,13 @@
 import random, sys, os, time
 log = False
 rta = False
-ln = []
-ls = []
-rep = []
+ln = ["DaniDev"]
+ls = ["2808"]
+rep = [0]
 nc = "DaniDev"
 sc = "2808"
+nu = "DaniDev"
+ra = rep[ln.index(nc)]
 while True:
     while log == False:
         tent = 3
@@ -28,6 +30,8 @@ while True:
                 while sc == nc:
                     print('A senha não pode ser o nome de usuário!')
                     sc = input('Insira senha:   ')
+                while nc in ln:
+                    print('Nome de usuário já está em uso!')
                 ln.append(nc)
                 ls.append(sc)
                 rep.append(0)
@@ -56,7 +60,8 @@ while True:
                         break
                         os.system('cls')
                 else:
-                    print(f'Olá {nc}')
+                    nu = nc
+                    print(f'Olá {nu}')
                     log = True
         elif tl == 3:
             sys.exit()
@@ -149,18 +154,18 @@ while True:
 ==============================================================================
 '''))
                 if ro == 1:
+                    x = max(rep)
                     print(f'''
 ================================|SALA DA FAMA|================================
 
-                |1| {print(nome[nome.index(max(rep))])}
-                |2| 
-                |3|                
+                |1| {ln[rep.index(x)]} - {x}
+                
 ==============================================================================
 ''')
                     os.system('pause')
                     os.system('cls')
                 elif ro == 2:
-                    print('Em desenvolvimento!')
+                    print(f'Sua reputação atual é: {ra}')
                     os.system('pause')
                     os.system('cls')
                 elif ro == 3:
