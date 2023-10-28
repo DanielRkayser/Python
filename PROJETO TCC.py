@@ -1,9 +1,10 @@
 import random, sys, os, time
 log = False
 rta = False
+tjo = False
 ln = ["DaniDev"]
 ls = ["2808"]
-rep = [0]
+rep = [30]
 nc = "DaniDev"
 sc = "2808"
 nu = "DaniDev"
@@ -34,7 +35,7 @@ while True:
                     print('Nome de usuário já está em uso!')
                 ln.append(nc)
                 ls.append(sc)
-                rep.append(0)
+                rep.append(30)
                 os.system('cls')
         elif tl == 2:
                 nl = input('Informe o nome de usuário:   ')
@@ -60,7 +61,8 @@ while True:
                         break
                         os.system('cls')
                 else:
-                    nu = nc
+                    nu = nl
+                    idu = ln.index(nu)
                     print(f'Olá {nu}')
                     log = True
         elif tl == 3:
@@ -153,6 +155,7 @@ while True:
                 
 ==============================================================================
 '''))
+                os.system('cls')
                 if ro == 1:
                     x = max(rep)
                     print(f'''
@@ -169,10 +172,112 @@ while True:
                     os.system('pause')
                     os.system('cls')
                 elif ro == 3:
-                    print('Em desenvolvimento!')
-                    os.system('pause')
-                    os.system('cls')
+                    pre = int(input('''
+===============================|PLUS REPUTAÇÃO|===============================
+                
+                |1| ADIVINHE O NÚMERO
+                |2| VOLTAR
+
+==============================================================================
+'''))
+                    if pre == 1:
+                        rta = False
+                        tjo = True
+                        while tjo == True:
+                            dif = int(input('''
+                            Escolha a dificuldade:
+                    |1| Fácil         • 1-5
+                    |2| Médio         • 1-10
+                    |3| Normal        • 1-15
+                    |4| Difícil       • 1-25
+                    |5| Muito difícil • 1-50
+                    |6| IMPOSSÍVEL    • 1-100
+                    |7| Sair
+'''))
+                            os.system('cls')
+                            if dif == 1:
+                                chu = int(input('Escolha um número de 1-5:    '))
+                                res = random.randint(1, 5)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 15 REP.')
+                                    ra += 15
+                                else:
+                                    print(f'Você perdeu 5 REP')
+                                    ra -= 5
+                            elif dif == 2:
+                                chu = int(input('Escolha um número de 1-10:    '))
+                                res = random.randint(1, 10)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 25 REP.')
+                                    ra += 25
+                                else:
+                                    print(f'Você perdeu 7 REP')
+                                    ra -= 7
+                                                
+                                chu = int(input('Escolha um número de 1-5:    '))
+                                res = random.randint(1, 5)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 15 REP.')
+                                    ra += 15
+                                else:
+                                    print(f'Você perdeu 5 REP')
+                                    ra -= 5
+                            elif dif == 3:
+                                chu = int(input('Escolha um número de 1-15:    '))
+                                res = random.randint(1, 10)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 30 REP.')
+                                    ra += 30
+                                else:
+                                    print(f'Você perdeu 10 REP')
+                                    ra -= 10
+                                                
+                                chu = int(input('Escolha um número de 1-5:    '))
+                                res = random.randint(1, 5)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 15 REP.')
+                                    ra += 15
+                                else:
+                                    print(f'Você perdeu 5 REP')
+                                    ra -= 5
+                            elif dif == 4:
+                                chu = int(input('Escolha um número de 1-15:    '))
+                                res = random.randint(1, 15)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 50 REP.')
+                                    ra += 50
+                                else:
+                                    print(f'Você perdeu 15 REP')
+                                    ra -= 15
+                                                
+                            elif dif == 5:
+                                chu = int(input('Escolha um número de 1-50:    '))
+                                res = random.randint(1, 50)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 100 REP.')
+                                    ra += 100
+                                else:
+                                    print(f'Você perdeu 30 REP')
+                                    ra -= 30
+               
+                            elif dif == 6:
+                                chu = int(input('Escolha um número de 1-50:    '))
+                                res = random.randint(1, 50)
+                                if  chu == res:
+                                    print(f'Parabéns! Você ganhou 175 REP.')
+                                    ra += 175
+                                else:
+                                    print(f'Você perdeu 50 REP')
+                                    ra -= 50
+                            elif dif == 7:
+                                tjo = False
+                                os.system('cls')
+                            else:
+                                print('vinagre')
+                        os.system('cls')
                 elif ro == 4:
                     rta = False
                     os.system('cls')
-                
+        elif to == 5:
+            log = False
+            os.system('cls')
