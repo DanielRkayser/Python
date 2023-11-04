@@ -176,7 +176,8 @@ while True:
 ===============================|PLUS REPUTAÇÃO|===============================
                 
                 |1| ADIVINHE O NÚMERO
-                |2| VOLTAR
+                |2| NÚMERO VENCEDOR
+                |3| VOLTAR
 
 ==============================================================================
 '''))
@@ -261,8 +262,8 @@ while True:
                                     ra -= 30
                
                             elif dif == 6:
-                                chu = int(input('Escolha um número de 1-50:    '))
-                                res = random.randint(1, 50)
+                                chu = int(input('Escolha um número de 1-100:    '))
+                                res = random.randint(1, 100)
                                 if  chu == res:
                                     print(f'Parabéns! Você ganhou 175 REP.')
                                     ra += 175
@@ -275,6 +276,33 @@ while True:
                             else:
                                 print('vinagre')
                         os.system('cls')
+                    elif pre == 2:
+                        acn = 0
+                        ern = 0
+                        nap = int(input('Qual o número que você acha que vai aparecer mais? (1 ou 2) '))
+                        while nap != 1 and nap != 2:
+                            print('Opção inválida')
+                            nap = int(input('Qual o número que você acha que vai aparecer mais? (1 ou 2) '))
+                        else:
+                            if nap == 1:
+                                oap = 2
+                            else:
+                                oap = 1
+                        aqu = int(input('Quantas vezes sortearemos os números?'))
+                        for i in range(0, aqu +1):
+                            sto = random.randint(1, 2)
+                            if sto == 1:
+                                acn += 1
+                            else:
+                                ern += 1
+                        if acn > ern:
+                            ra += aqu
+                            print(f'Você ganhou {aqu} REP')
+                        elif ern > acn:
+                            ra -= aqu/2
+                            print(f'Você perdeu {aqu/2} REP')
+                        else:
+                            print("Empatou! Nada mudou no seu REP")
                 elif ro == 4:
                     rta = False
                     os.system('cls')
