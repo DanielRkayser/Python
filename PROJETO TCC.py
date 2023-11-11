@@ -33,6 +33,10 @@ while True:
                     sc = input('Insira senha:   ')
                 while nc in ln:
                     print('Nome de usuário já está em uso!')
+                    nc = input('Insira nome de usuário:   ')
+                os.system('cls')
+                sc = input('Insira senha:   ')
+                os.system('cls')
                 ln.append(nc)
                 ls.append(sc)
                 rep.append(30)
@@ -58,7 +62,7 @@ while True:
                             time.sleep(1)
                             os.system('cls')
                         tmp += 30
-                        break
+                        tent = 0
                         os.system('cls')
                 else:
                     nu = nl
